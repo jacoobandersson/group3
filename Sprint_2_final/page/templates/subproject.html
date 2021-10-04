@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>subproject</title>
+</head>
+
+<body>
+    <div>
+
+
+        <form action="/profile">
+            <input value="Go back to profile." type="submit">
+        </form><br>
+        <form action="/editproject">
+            <input value="Go back to editting projects." type="submit">
+        </form>
+
+        <!-- task -->
+
+        <form method="post" action="/subproject">
+            <h1>CREATE NEW TASK IN SUB PROJECT</h1>
+
+            <label>SUB PROJECT YOU WISH TO CREATE TASK FOR:</label><br>
+            <select name="s_one" id="sub_project">
+                {% for item in subprojects_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>ASSIGN PROJECT MEMBER (USERNAME):</label><br>
+            <select name="u_one" id="username">
+                {% for item in username_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>TASK NAME:</label><br>
+            <input type="text" name="s_two" id="task_name"><br><br>
+
+            <label>ESTIMATED TIME TO COMPLETE THIS TASK:</label><br>
+            <input type="text" name="s_three" id="work_estimate"><br><br>
+
+            <label>DESCRIPTION:</label><br>
+            <input type="text" size="255" width="12px" name="s_four" id="comment"><br><br>
+
+            <input type="submit" value="CREATE TASK">
+
+        </form><br><br>
+
+        <!-- end task -->
+
+        <form method="post" action="/subproject">
+            <h1>CREATE TASK PROGRESS RECORD</h1>
+
+            <label>CHOOSE TASK FROM YOUR SUB PROJECT:</label><br>
+            <select name="t_one" id="task_choice">
+                {% for item in tasks_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>DATE OF WORKING ON A TASK:</label><br>
+            <input type="date" name="t_two" id="date_of_work"><br><br>
+
+            <label>HOURS SPENT ON THE TASK:</label><br>
+
+            <input type="range" min="1" max="10" name="t_three" id="hours_worked"
+                oninput="t_three_output.value = t_three.value">
+            <label for="hours_worked">Your hours:</label>
+            <output name="t_three_output_name" id="t_three_output">5</output><br><br>
+
+            <label>YOUR NOTE/REFLECTION:</label><br>
+            <input type="text" size="255" width="12px" name="t_four" id="comment"><br><br>
+
+            <label>DID YOU MANAGE TO FINISH THE TASK?:</label><br><br>
+
+            <input type="radio" name="t_five" id="finished_yes" value="1">
+            <label for="finished_yes"> Yes</label>
+            <input type="radio" name="t_five" id="finished_no" value="0" checked>
+            <label for="finished_no"> No</label><br><br>
+
+            <input type="submit" value="UPDATE TASK">
+        </form><br><br>
+
+
+
+
+    </div>
+</body>
+
+</html>
