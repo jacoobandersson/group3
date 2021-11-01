@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>project</title>
+</head>
+
+<body>
+    <div>
+        <form method="post" action="/project">
+            <h1>CREATE PROJECT</h1>
+
+            <label>PROJECT NAME:</label><br>
+            <input type="text" name="p_one" id="project_name"><br><br>
+
+            <label>PROJECT START DATE:</label><br>
+            <input type="date" name="p_two" id="project_start_date"><br><br>
+
+            <label>PROJECT ESTIMATED END DATE:</label><br>
+            <input type="date" name="p_three" id="project_end_date"><br><br>
+
+            <label>COMPANY:</label><br>
+            <select name="p_four" id="company_choice">
+                {% for item in comp_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <input type="submit" value="CREATE PROJECT">
+        </form><br><br>
+        <form action="/profile">
+            <input value="Go back to profile." type="submit">
+        </form>
+
+
+
+    </div>
+</body>
+
+</html>

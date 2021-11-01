@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>edit company</title>
+</head>
+
+<body>
+    <div>
+        <form action="/profile">
+            <input value="Go back to profile." type="submit">
+        </form>
+
+        <!-- add company member -->
+
+        <form method="post" action="/editcompany">
+            <h1>ADD NEW MEMBER TO THE COMPANY</h1>
+
+            <label>COMPANY:</label><br>
+            <select name="cc_one" id="companiess_choice">
+                {% for item in companiess_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>USERNAME:</label><br>
+            <input type="text" name="cc_two" id="username"><br><br>
+
+            <label>ROLE:</label><br>
+            <input type="text" name="cc_three" id="role"><br><br>
+
+            <input type="submit" value="ADD">
+        </form><br><br>
+
+
+    </div>
+</body>
+
+</html>

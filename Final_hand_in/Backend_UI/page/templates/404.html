@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ERROR 404</title>
+</head>
+
+<body>
+    <div>
+        {% block body %}
+        <h1>Page Not Found</h1>
+        <p>Whoops, this page doesn’t exist! (404)</p>
+        <p>Please go back to main page.</p>
+        {% endblock %}
+
+        <form action="/">
+            <input value="Main page" name="logout" type="submit">
+        </form> 
+    </div>
+</body>
+</html>

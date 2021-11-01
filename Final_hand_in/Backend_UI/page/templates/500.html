@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>INTERNAL ERROR</title>
+</head>
+
+<body>
+    <div>
+        {% block body %}
+        <h1>Something went wrong!</h1>
+        <p>You might have inputed invalid data.</p>
+        <p>Try again typing in something else.</p>
+        <p>If it was not an input, problem might be on our side.</p>
+        {% endblock %}
+
+        <form action="/">
+            <input value="Main page" name="logout" type="submit">
+        </form> 
+    </div>
+</body>
+</html>

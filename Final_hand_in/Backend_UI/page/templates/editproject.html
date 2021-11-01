@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>edit project</title>
+</head>
+
+<body>
+    <div>
+        <form action="/profile">
+            <input value="Go back to profile." type="submit">
+        </form>
+
+        <!-- add project member -->
+
+        <form method="post" action="/editproject">
+            <h1>ADD NEW MEMBER TO THE PROJECT</h1>
+
+            <label>PROJECT:</label><br>
+            <select name="p_one" id="project_choice">
+                {% for item in projects_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>USERNAME:</label><br>
+            <input type="text" name="p_two" id="username"><br><br>
+
+            <label>ROLE:</label><br>
+            <input type="text" name="p_three" id="role"><br><br>
+
+            <input type="submit" value="ADD">
+        </form><br><br>
+
+        <!-- subproject -->
+
+        <form method="post" action="/editproject">
+            <h1>CREATE SUB PROJECT</h1>
+
+            <label>PROJECT:</label><br>
+            <select name="p_one" id="project_choice">
+                {% for item in projects_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>SUB PROJECT NAME:</label><br>
+            <input type="text" name="p_four" id="sub_name"><br><br>
+
+            <input type="submit" value="CREATE SUB PROJECT">
+        </form><br><br>
+
+        <!-- edit subproject -->
+
+        <form method="post" action="/editproject">
+            <h1>EDIT SUBPROJECTS INFO</h1>
+            <label>PROJECT:</label><br>
+            <select name="sp_one" id="project_choice">
+                {% for item in projects_dat %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select><br><br>
+            <input type="submit" value="EDIT SUBPROJECTS">
+        </form>
+
+    </div>
+</body>
+
+</html>
